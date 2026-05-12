@@ -1,10 +1,2 @@
-# Ignore all files
-*
 # Do not ignore files with an extension (source code)
-!*.*
-!/headers
-!/lib
-# Do not ignore Makefile
-!Makefile
-# Do not ignore README
-!README
+*.o
