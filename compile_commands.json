@@ -1,0 +1,35 @@
+[
+  {
+    "file": "main.c",
+    "arguments": [
+      "/usr/bin/gcc",
+      "-Wall",
+      "-pedantic",
+      "-Werror",
+      "-Ihelpers",
+      "-std=c23",
+      "-c",
+      "-o",
+      "main.o",
+      "main.c"
+    ],
+    "directory": "/Users/georgethomas/Projects/gt-vim",
+    "output": "main.o"
+  },
+  {
+    "file": "main.c",
+    "arguments": [
+      "/usr/bin/gcc",
+      "-Wall",
+      "-pedantic",
+      "-Werror",
+      "-Ihelpers",
+      "-std=c23",
+      "-o",
+      "main",
+      "main.c"
+    ],
+    "directory": "/Users/georgethomas/Projects/gt-vim",
+    "output": "main"
+  }
+]
