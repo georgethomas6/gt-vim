@@ -1,20 +1,32 @@
+# $@ = name of the rule
+# $< = name of the first pre-req
+# $^ = all pre-reqs
 CC = gcc
-CFLAGS = -Wall -pedantic -Werror -Ihelpers -std=c23
+CFLAGS = -Wall -pedantic -Werror -Iinclude -std=c23
 
 OBJS = build/main.o \
-			 build/input.o
+       build/input.o
 
-main: $(OBJS)
-	$(CC) $(CFLAGS) -o ./exe/$@ $^
+TARGET = bin/main
 
-build/main.o: ./src/main.c
-	$(CC) $(CFLAGS) -c -o ./build/main.o $<
+# | indicates an `order only pre-req` 
+# i.e. if bin file (make sees directories as files) doesn't exist, run the rule
+$(TARGET): $(OBJS) | bin
+	$(CC) $(CFLAGS) -o $@ $^
 
-build/input.o: ./src/input.c
-	$(CC) $(CFLAGS) -c -o ./build/input.o $<
 
-compile_commands:
+# for any file build/<name>.o we need, it depends on the file src/<name>.c 
+build/%.o: src/%.c | build
+	$(CC) $(CFLAGS) -c $< -o $@
+
+bin:
+	mkdir -p bin
+
+build:
+	mkdir -p build
+compile_commands: 
+	make clean
 	bear -- make
 
 clean:
-	rm -f main *.o
+	rm -rf build bin

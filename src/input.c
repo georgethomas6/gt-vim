@@ -1,4 +1,4 @@
-#include "../headers/input.h"
+#include "../include/input.h"
 
 /*
  * This function modifies the current terminal settings to enable raw mode

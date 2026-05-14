@@ -1,35 +1,36 @@
 [
   {
-    "file": "main.c",
+    "file": "src/main.c",
     "arguments": [
       "/usr/bin/gcc",
       "-Wall",
       "-pedantic",
       "-Werror",
-      "-Ihelpers",
+      "-Iinclude",
       "-std=c23",
       "-c",
+      "src/main.c",
       "-o",
-      "main.o",
-      "main.c"
+      "build/main.o"
     ],
     "directory": "/Users/georgethomas/Projects/gt-vim",
-    "output": "main.o"
+    "output": "build/main.o"
   },
   {
-    "file": "main.c",
+    "file": "src/input.c",
     "arguments": [
       "/usr/bin/gcc",
       "-Wall",
       "-pedantic",
       "-Werror",
-      "-Ihelpers",
+      "-Iinclude",
       "-std=c23",
+      "-c",
+      "src/input.c",
       "-o",
-      "main",
-      "main.c"
+      "build/input.o"
     ],
     "directory": "/Users/georgethomas/Projects/gt-vim",
-    "output": "main"
+    "output": "build/input.o"
   }
 ]
