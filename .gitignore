@@ -1,2 +1,5 @@
 # Do not ignore files with an extension (source code)
-*.o
+
+bin/
+build/
+exe/
